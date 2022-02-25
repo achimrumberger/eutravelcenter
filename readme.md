@@ -1,0 +1,1 @@
+It is planned to develop a single simple interface for major european train travel sites
