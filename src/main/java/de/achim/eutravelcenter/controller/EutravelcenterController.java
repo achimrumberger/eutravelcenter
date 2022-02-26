@@ -7,7 +7,9 @@ import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import de.achim.eutravelcenter.dao.StationDAO;
@@ -16,16 +18,16 @@ import de.achim.eutravelcenter.utils.ReadStationData;
 @RestController
 public class EutravelcenterController {
 
-	@Autowired
 	private ReadStationData rsd; 
 	
-	public EutravelcenterController() {
-	//	this.rsd = rsd;
+	public EutravelcenterController(ReadStationData rsd ) {
+		this.rsd = rsd;
 	}
 	
-	@GetMapping("/hello")
-	public String helloWorld(
+	@RequestMapping("/hello")
+	public @ResponseBody String helloWorld(
 			@RequestParam String name) {
+		
 		return "hello " + name;
 	}
 	

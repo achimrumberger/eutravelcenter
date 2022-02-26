@@ -8,11 +8,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.util.ResourceUtils;
 
 import de.achim.eutravelcenter.dao.StationDAO;
 
-@Component
+@Service
 public class ReadStationData {
 	
 	public List<StationDAO> readUnicodeEuropeA11() throws Exception {
