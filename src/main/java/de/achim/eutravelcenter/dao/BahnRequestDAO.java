@@ -33,6 +33,40 @@ public class BahnRequestDAO {
 	public String externRequest_2;
 	public String HWAI_2;
 
+	/**
+	 * 
+	 * @param targetURL
+	 * @param queryStringStart
+	 * @param identCookie
+	 * @param revia
+	 * @param existOptimizePrice_deactivated
+	 * @param country
+	 * @param dbkanal_007
+	 * @param start
+	 * @param protocol
+	 * @param rEQ0JourneyStopsS0A
+	 * @param s
+	 * @param rEQ0JourneyStopsSID
+	 * @param rEQ0JourneyStopsZ0A
+	 * @param z
+	 * @param rEQ0JourneyStopsZID
+	 * @param date
+	 * @param time
+	 * @param timesel
+	 * @param returnDate
+	 * @param returnTime
+	 * @param returnTimesel
+	 * @param optimize
+	 * @param auskunft_travelers_number
+	 * @param tariffTravellerType_1
+	 * @param tariffTravellerReductionClass_1
+	 * @param tariffClass
+	 * @param rtMode
+	 * @param externRequest_1
+	 * @param hWAI_1
+	 * @param externRequest_2
+	 * @param hWAI_2
+	 */
 	public BahnRequestDAO(String targetURL, String queryStringStart, String identCookie, String revia,
 			String existOptimizePrice_deactivated, String country, String dbkanal_007, String start, String protocol,
 			String rEQ0JourneyStopsS0A, String s, String rEQ0JourneyStopsSID, String rEQ0JourneyStopsZ0A, String z,

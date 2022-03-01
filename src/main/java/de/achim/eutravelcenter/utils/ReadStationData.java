@@ -19,7 +19,7 @@ import de.achim.eutravelcenter.dao.StationDAO;
 @Service
 public class ReadStationData {
 
-	public List<StationDAO> readUnicodeEuropeA11() throws Exception {
+	public List<StationDAO> readAllStationDataForEurope() throws Exception {
 
 		String line;
 		File sourceFile = ResourceUtils.getFile("classpath:static/stations.csv");
@@ -44,7 +44,7 @@ public class ReadStationData {
 
 	}
 
-	public StationDAO readUnicodeEuropeForStation(String station) throws Exception {
+	public StationDAO readEuropeStationDataForStation(String station) throws Exception {
 
 		String line;
 		File sourceFile = ResourceUtils.getFile("classpath:static/stations.csv");

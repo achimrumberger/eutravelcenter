@@ -68,7 +68,7 @@ public class EutravelcenterControllerTest {
 
 		StationDAO dao = new StationDAO(testdate);
 		list.add(dao);
-		when(rsd.readUnicodeEuropeA11()).thenReturn(list);
+		when(rsd.readAllStationDataForEurope()).thenReturn(list);
 
 		this.mockMvc.perform(get("/stations?name=Achim")) 
 		.andDo(print()) 

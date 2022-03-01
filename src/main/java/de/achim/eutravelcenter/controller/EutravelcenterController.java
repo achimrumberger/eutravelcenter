@@ -43,7 +43,7 @@ public class EutravelcenterController {
 		List<String> stationNames = new ArrayList<>();
 		try {
 			
-			List<StationDAO> stationsList = rsd.readUnicodeEuropeA11();
+			List<StationDAO> stationsList = rsd.readAllStationDataForEurope();
 			Set<StationDAO> setEuropeAllList = stationsList
 					.stream()
 					.filter(s -> s.getName().toLowerCase().startsWith(name.toLowerCase()))
@@ -63,17 +63,24 @@ public class EutravelcenterController {
 		List<String> connenctionLinks = new ArrayList<>();
 		
 		try {
-			StationDAO startStation = rsd.readUnicodeEuropeForStation(connections.getStartStation());
-			StationDAO destinationStation = rsd.readUnicodeEuropeForStation(connections.getDestinationStation());
-			String bahnDate = BahnUtils.makeBahnDatum(connections.getTravelStartDate());
-			String travelTime = connections.getTravelStartTime();
+			StationDAO startStationDAO = rsd.readEuropeStationDataForStation(connections.getStartStation());
+			StationDAO destinationStationDAO = rsd.readEuropeStationDataForStation(connections.getDestinationStation());
+			String startTravelDate = BahnUtils.makeBahnDatum(connections.getTravelStartDate());
+			String startTravelTime = connections.getTravelStartTime();
 			long requestTimeAsUnixTS = BahnUtils.getUnixTimeStamp();
-			String startX =  BahnUtils.formatXYCoordinates(startStation.getLongitude());
-			String startY =  BahnUtils.formatXYCoordinates(startStation.getLatitude());
-			String startStationID = startStation.getUic();
-			String destinationX =  BahnUtils.formatXYCoordinates(destinationStation.getLongitude());
-			String destinationY =  BahnUtils.formatXYCoordinates(destinationStation.getLatitude());
-			String destinationStationID = destinationStation.getUic();
+			String startX =  BahnUtils.formatXYCoordinates(startStationDAO.getLongitude());
+			String startY =  BahnUtils.formatXYCoordinates(startStationDAO.getLatitude());
+			String startStationName = startStationDAO.getName();
+			//check format: 008011160
+			String startStationID = startStationDAO.getUic();
+			String destinationX =  BahnUtils.formatXYCoordinates(destinationStationDAO.getLongitude());
+			String destinationY =  BahnUtils.formatXYCoordinates(destinationStationDAO.getLatitude());
+			String destinationStationID = destinationStationDAO.getUic();
+			String destinationStationName = destinationStationDAO.getName();
+			//tariffClass 2 = tariffTravellerType_1="E"??
+			String tariffClass = connections.getTariffClass();		
+			String numberOfTravellers = connections.getNumberOfTravellers();
+
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
