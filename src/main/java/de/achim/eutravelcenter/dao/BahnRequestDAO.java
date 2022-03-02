@@ -83,12 +83,12 @@ public class BahnRequestDAO {
 		this.dbkanal_007 = dbkanal_007;
 		this.start = start;
 		this.protocol = protocol;
-		REQ0JourneyStopsS0A = rEQ0JourneyStopsS0A;
-		S = s;
-		REQ0JourneyStopsSID = rEQ0JourneyStopsSID;
-		REQ0JourneyStopsZ0A = rEQ0JourneyStopsZ0A;
-		Z = z;
-		REQ0JourneyStopsZID = rEQ0JourneyStopsZID;
+		this.REQ0JourneyStopsS0A = rEQ0JourneyStopsS0A;
+		this.S = s;
+		this.REQ0JourneyStopsSID = rEQ0JourneyStopsSID;
+		this.REQ0JourneyStopsZ0A = rEQ0JourneyStopsZ0A;
+		this.Z = z;
+		this.REQ0JourneyStopsZID = rEQ0JourneyStopsZID;
 		this.date = date;
 		this.time = time;
 		this.timesel = timesel;
@@ -102,9 +102,9 @@ public class BahnRequestDAO {
 		this.tariffClass = tariffClass;
 		this.rtMode = rtMode;
 		this.externRequest_1 = externRequest_1;
-		HWAI_1 = hWAI_1;
+		this.HWAI_1 = hWAI_1;
 		this.externRequest_2 = externRequest_2;
-		HWAI_2 = hWAI_2;
+		this.HWAI_2 = hWAI_2;
 	}
 
 	public String getTargetURL() {

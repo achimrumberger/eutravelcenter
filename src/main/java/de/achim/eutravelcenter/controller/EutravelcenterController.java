@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import de.achim.eutravelcenter.dao.ConnectionRequestDAO;
 import de.achim.eutravelcenter.dao.StationDAO;
+import de.achim.eutravelcenter.dbahn.BahnRequestService;
 import de.achim.eutravelcenter.utils.BahnUtils;
 import de.achim.eutravelcenter.utils.ReadStationData;
 
@@ -24,9 +25,11 @@ import de.achim.eutravelcenter.utils.ReadStationData;
 public class EutravelcenterController {
 
 	private ReadStationData rsd; 
+	private BahnRequestService brs;
 	
-	public EutravelcenterController(ReadStationData rsd ) {
+	public EutravelcenterController(ReadStationData rsd, BahnRequestService brs ) {
 		this.rsd = rsd;
+		this.brs = brs;
 	}
 	
 	@RequestMapping(value ="/hello", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -80,15 +83,18 @@ public class EutravelcenterController {
 			//tariffClass 2 = tariffTravellerType_1="E"??
 			String tariffClass = connections.getTariffClass();		
 			String numberOfTravellers = connections.getNumberOfTravellers();
-
+			connenctionLinks = brs.getConnectionsFromDeutschBahn(startStationName, startX, startY, startStationID, 
+					destinationStationName, destinationX, destinationY, destinationStationID, 
+					requestTimeAsUnixTS, startTravelTime, startTravelDate, numberOfTravellers, tariffClass);
+			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
-		String connection1 = "href=\"https://reiseauskunft.bahn.de/bin/query.exe/dn?ld=4399&amp;protocol=https:&amp;seqnr=1&amp;"
-				+ "ident=7i.02888599.1645435080&amp;rt=1&amp;rememberSortType=minDeparture&amp;\"\n";
-		connenctionLinks.add(connection1);
+//		String connection1 = "href=\"https://reiseauskunft.bahn.de/bin/query.exe/dn?ld=4399&amp;protocol=https:&amp;seqnr=1&amp;"
+//				+ "ident=7i.02888599.1645435080&amp;rt=1&amp;rememberSortType=minDeparture&amp;\"\n";
+//		connenctionLinks.add(connection1);
 		return connenctionLinks;
 	}
 }

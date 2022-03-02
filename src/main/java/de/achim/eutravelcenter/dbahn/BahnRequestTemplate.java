@@ -12,12 +12,14 @@ import de.achim.eutravelcenter.dao.BahnRequestDAO;
 
 public class BahnRequestTemplate {
 	
-	private BahnRequestDAO data = new BahnRequestDAO("https://reiseauskunft.bahn.de", "/bin/query.exe/dn?", "ge.01704183", "yes", "1", "DEU", "L01_S01_D001_qf-bahn-svb-kl2_lz03", "1", "https:", "1", "Berlin Hbf", 
-			"A=1@O=Berlin Hbf@X=13369549@Y=52525589@U=80@L=008011160@B=1p=1638831949@", "1", "PARIS", "A=1@O=PARIS@X=2333681@Y=48861496@U=80@L=008796001@B=1p=1638831949@", "Fr, 18.02.2022", "13:54",
-			"depart", "", "", "depart", "0", "1", "E", "0", "2", "DB-HYBRID", "yes", "JS!js=yes!ajax=yes!", "yes", "JS!js=yes!ajax=yes!#hfsseq1|ml.0840683.1645188855");
+	private BahnRequestDAO data;
+	
+//	private BahnRequestDAO data = new BahnRequestDAO("https://reiseauskunft.bahn.de", "/bin/query.exe/dn?", "ge.01704183", "yes", "1", "DEU", "L01_S01_D001_qf-bahn-svb-kl2_lz03", "1", "https:", "1", "Berlin Hbf", 
+//			"A=1@O=Berlin Hbf@X=13369549@Y=52525589@U=80@L=008011160@B=1p=1638831949@", "1", "PARIS", "A=1@O=PARIS@X=2333681@Y=48861496@U=80@L=008796001@B=1p=1638831949@", "Fr, 18.02.2022", "13:54",
+//			"depart", "", "", "depart", "0", "1", "E", "0", "2", "DB-HYBRID", "yes", "JS!js=yes!ajax=yes!", "yes", "JS!js=yes!ajax=yes!#hfsseq1|ml.0840683.1645188855");
 
-	public BahnRequestTemplate() {
-
+	public BahnRequestTemplate(BahnRequestDAO data) {
+		this.data = data;
 	}
 
 	private long getUnixTimeStamp() {
