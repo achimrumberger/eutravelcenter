@@ -7,3 +7,7 @@ Used Libs
 European Station Data are comming from:
 [stations](https://github.com/trainline-eu/stations) 
 by [lucavezz](https://github.com/lucavezz)
+
+run the application from the command line with:
+
+***mvn spring-boot:run***
