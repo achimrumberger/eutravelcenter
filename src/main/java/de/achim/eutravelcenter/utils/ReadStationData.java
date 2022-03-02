@@ -10,6 +10,7 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ResourceUtils;
@@ -25,7 +26,7 @@ public class ReadStationData {
 		File sourceFile = ResourceUtils.getFile("classpath:static/stations.csv");
 		List<StationDAO> list = new ArrayList<>();
 		//		geht auch
-		//       File sourceFile = new ClassPathResource("static/stations.csv").getFile();
+		//File sourceFile = new ClassPathResource("static/stations.csv").getFile();
 		FileReader fr = new FileReader(sourceFile, StandardCharsets.ISO_8859_1);
 		BufferedReader reader = new BufferedReader(fr);
 

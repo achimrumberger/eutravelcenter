@@ -68,6 +68,15 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		 <resources>
+        <resource>
+            <filtering>false</filtering>
+            <directory>src/main/resources/</directory>
+            <includes>
+                <include>**/*.csv</include>
+            </includes>
+        </resource>
+    </resources>
 	</build>
 
 </project>
