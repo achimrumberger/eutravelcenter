@@ -16,7 +16,7 @@ import org.springframework.util.ResourceUtils;
 
 import de.achim.eutravelcenter.dao.StationDAO;
 
-@Service
+@Component
 public class ReadStationData {
 
 	public List<StationDAO> readAllStationDataForEurope() throws Exception {

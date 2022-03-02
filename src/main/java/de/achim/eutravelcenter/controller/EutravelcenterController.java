@@ -24,7 +24,10 @@ import de.achim.eutravelcenter.utils.ReadStationData;
 @RestController
 public class EutravelcenterController {
 
+
 	private ReadStationData rsd; 
+	
+	
 	private BahnRequestService brs;
 	
 	public EutravelcenterController(ReadStationData rsd, BahnRequestService brs ) {

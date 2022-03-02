@@ -7,13 +7,14 @@ import java.util.Map;
 import org.jsoup.Connection.Method;
 import org.jsoup.Connection.Response;
 import org.jsoup.select.Elements;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import de.achim.eutravelcenter.dao.BahnRequestDAO;
 import de.achim.eutravelcenter.utils.BahnUtils;
 import de.achim.eutravelcenter.utils.DiagnosticConnection;
 
-@Service
+@Component
 public class BahnRequestService {
 
 	private static final String BIN_QUERY_EXE_DN = "bin/query.exe/dn?";

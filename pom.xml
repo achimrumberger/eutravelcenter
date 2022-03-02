@@ -14,6 +14,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>eutravelcenter</name>
 	<description>common entry point for eu train services</description>
+	
 	<properties>
 		<java.version>11</java.version>
 	</properties>
